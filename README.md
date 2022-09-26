@@ -906,3 +906,45 @@ For example, dialing ``*120*9996*1*2*3#`` and pressing <span class="method">CALL
 | 403 | The subscriber is blacklisted |
 | 403 | Insufficient Wallet Balance |
 | 404 | App not found |
+
+Realtime Wallet API
+=====================
+
+### Wallet Balance API
+
+###### Sample POST Request
+
+If app has passphrase
+
+```sh
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{"walletBalanceRequest" : {"app_secret" : "<string:app_secret>", "passphrase" : "<string:passphrase>", "app_id" : "<string:app_id>"}}' \
+     "https://devapi.globelabs.com.ph/wallet/v1/balance"
+```
+
+Otherwise,
+
+```sh
+curl -X POST \
+     -H "Content-Type: application/json" \
+     -d '{"walletBalanceRequest" : {"access_token" : "<string:access_token>"}}' \
+     "https://devapi.globelabs.com.ph/wallet/v1/balance"
+```
+
+###### Sample Successful POST Response
+
+```json
+{
+   "wallet_balance" : "<float:balance>",
+   "as_of" : "<datetime:as_of>"
+}
+```
+
+### Error Codes
+
+| Code | Description                          |
+|------|--------------------------------------|
+| 200  | Success                              |
+| 429  | Too many requests                    |
+| 401  | Unauthorized / Authentication failed |
