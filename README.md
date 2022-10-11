@@ -912,6 +912,9 @@ Realtime Wallet API
 
 ### Wallet Balance API
 
+Wallet Balance API allows developers to retrieve their real-time wallet balance
+via API so they can monitor their balance
+
 ###### Sample POST Request
 
 If app has passphrase
