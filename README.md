@@ -923,7 +923,7 @@ If app has passphrase
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{"walletBalanceRequest" : {"app_secret" : "<string:app_secret>", "passphrase" : "<string:passphrase>", "app_id" : "<string:app_id>"}}' \
-     "https://devapi.globelabs.com.ph/wallet/v1/balance"
+     "https://devapi.globelabs.com.ph/wallet/v1/balance/"
 ```
 
 Otherwise,
@@ -932,7 +932,7 @@ Otherwise,
 curl -X POST \
      -H "Content-Type: application/json" \
      -d '{"walletBalanceRequest" : {"access_token" : "<string:access_token>"}}' \
-     "https://devapi.globelabs.com.ph/wallet/v1/balance"
+     "https://devapi.globelabs.com.ph/wallet/v1/balance/"
 ```
 
 ###### Sample Successful POST Response
